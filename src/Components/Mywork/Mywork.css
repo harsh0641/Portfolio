@@ -1,0 +1,568 @@
+.mywork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin: 60px 40px;
+    overflow: hidden;
+}
+
+.mywork-title h1 {
+    padding: 0 20px;
+    font-size: 55px;
+    font-weight: 600;
+}
+
+.mywork-title {
+    position: relative;
+}
+
+.mywork-title img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.mywork-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Default 3 columns layout */
+    gap: 20px;
+    width: 93%;
+}
+
+.mywork-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: none;
+    cursor: default;
+}
+
+.mywork_showmore {
+    display: flex;
+    gap: 10px;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 15px 15px;
+    font-size: 18px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+@media (min-width: 942px) and (max-width: 1100px) {
+    .mywork-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns layout */
+    }
+
+    .mywork {
+        margin: 40px 20px;
+        /* Adjust margins */
+    }
+
+    .mywork-title h1 {
+        font-size: 45px;
+        /* Adjust font size */
+    }
+
+    .mywork_showmore {
+        font-size: 16px;
+        /* Adjust font size */
+        padding: 12px 12px;
+    }
+}
+
+@media (max-width: 942px) {
+    .mywork-container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        /* Center images in a single column layout */
+        width: 100%;
+        /* Full width for container */
+    }
+
+    .mywork {
+        margin: 30px 10px;
+        /* Adjust margins to fit better */
+    }
+
+    .mywork-title h1 {
+        font-size: 36px;
+        /* Further reduce font size for mobile */
+        text-align: center;
+        /* Center title */
+    }
+
+    .mywork-container img {
+        width: 90%;
+        /* Reduce image width on mobile */
+        height: auto;
+        margin: 0 auto;
+        /* Center the images */
+    }
+
+    .mywork_showmore {
+        font-size: 14px;
+        /* Adjust font size */
+        padding: 10px 10px;
+    }
+}
+
+/* Mobile view (max-width: 450px) */
+@media (max-width: 450px) {
+    .mywork {
+        margin: 20px 10px;
+        /* Reduce margin for even smaller screens */
+    }
+
+    .mywork-title h1 {
+        font-size: 30px;
+        /* Further decrease title size */
+        padding: 0 10px;
+        /* Reduce padding for smaller screens */
+    }
+
+    .mywork-container {
+        grid-template-columns: repeat(1, 1fr);
+        /* Display 2 images per row */
+    }
+
+    .mywork-container img {
+        width: 100%;
+        /* Full-width images */
+        height: auto;
+        border-radius: 8px;
+        /* Slightly smaller border-radius */
+    }
+
+    .mywork_showmore {
+        font-size: 12px;
+        /* Decrease font size */
+        padding: 8px 8px;
+    }
+}
+
+/* Wrapper for each item */
+.mywork-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.mywork-img-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    /* Ensure it spans full width */
+    height: auto;
+}
+
+.mywork-img-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Overlay container */
+.mywork-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    transition: opacity 0.5s ease;
+}
+
+/* Hover effect for the image */
+.mywork-img-wrapper:hover img {
+    /* transform: scale(1.1); */
+    filter: brightness(0.2);
+    /* Darken the image */
+}
+
+/* Hover effect for the overlay */
+.mywork-img-wrapper:hover .mywork-overlay {
+    opacity: 1;
+}
+
+/* Text styles */
+.mywork-title-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mywork-description-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 80%;
+    /* Limit text width for better alignment */
+}
+
+
+.mywork_showmore {
+    display: flex;
+    align-items: center;
+    /* Center content vertically */
+    justify-content: center;
+    /* Center content horizontally */
+    gap: 10px;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 15px 15px;
+    font-size: 18px;
+    transition: 0.5s;
+    cursor: pointer;
+    text-decoration: none;
+    /* Remove underline for link */
+    color: white;
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 942px) {
+    .mywork_showmore {
+        font-size: 14px;
+        padding: 10px 10px;
+        margin: 20px auto;
+        /* Center the button horizontally */
+        width: fit-content;
+        /* Ensure proper size */
+    }
+}
+
+/* Hover effect for button */
+.mywork_showmore:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Add hover effect */
+}
+
+/* Wrapper for each item */
+.mywork-item {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ensure the image and overlay have the same size */
+.mywork-img-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    /* Ensure it fills the container */
+    overflow: hidden;
+    /* Prevent any image overflow */
+}
+
+/* Ensure the image fills the container completely */
+.mywork-img-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* Make the image take up all available space */
+    transition: filter 0.5s ease;
+    /* Only transition the filter on hover */
+}
+
+/* Overlay container */
+.mywork-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Make overlay cover the whole image */
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    transition: opacity 0.5s ease;
+    
+
+}
+
+/* Hover effect for the image (no scale, only brightness change) */
+.mywork-img-wrapper:hover img {
+    filter: brightness(0.3);
+    /* Darken the image */
+}
+
+/* Hover effect for the overlay */
+.mywork-img-wrapper:hover .mywork-overlay {
+    opacity: 1;
+    /* Show overlay */
+}
+
+/* Text styles */
+.mywork-title-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mywork-description-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 80%;
+}
+
+/* Show more button */
+.mywork_showmore {
+    display: flex;
+    align-items: center;
+    /* Center content vertically */
+    justify-content: center;
+    /* Center content horizontally */
+    gap: 10px;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 15px 15px;
+    font-size: 18px;
+    transition: 0.5s;
+    cursor: pointer;
+    text-decoration: none;
+    /* Remove underline for link */
+    color: white;
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 942px) {
+    .mywork-container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        width: 100%;
+    }
+
+    .mywork-title h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .mywork-container img {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .mywork_showmore {
+        font-size: 14px;
+        padding: 10px 10px;
+    }
+}
+
+/* Mobile view (max-width: 450px) */
+@media (max-width: 450px) {
+    .mywork-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .mywork-title h1 {
+        font-size: 30px;
+        padding: 0 10px;
+    }
+
+    .mywork-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .mywork_showmore {
+        font-size: 12px;
+        padding: 8px 8px;
+    }
+}
+
+/* Wrapper for each item */
+.mywork-item {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ensure the image and overlay have the same size */
+.mywork-img-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    /* Ensure it fills the container */
+    overflow: hidden;
+    /* Prevent any image overflow */
+}
+
+/* Ensure the image fills the container completely */
+.mywork-img-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* Make the image take up all available space */
+    object-fit: cover;
+    /* Ensure the image covers the area without stretching */
+    transition: filter 0.5s ease;
+    /* Only transition the filter on hover */
+
+}
+
+/* Overlay container */
+.mywork-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Make overlay cover the whole image */
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center text vertically and horizontally */
+    opacity: 0;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    transition: opacity 0.5s ease;
+}
+
+/* Hover effect for the image (no scale, only brightness change) */
+.mywork-img-wrapper:hover img {
+    filter: brightness(0.3);
+    /* Darken the image */
+
+}
+
+/* Hover effect for the overlay */
+.mywork-img-wrapper:hover .mywork-overlay {
+    
+    opacity: 1;
+
+}
+
+/* Title and description text styles */
+.mywork-title-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: normal;
+    /* Allow the title to wrap to the next line */
+    overflow: visible;
+    /* Ensure all the text is visible */
+}
+
+.mywork-description-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 1px 20px;
+    max-width: 100%;
+    /* Limit text width for better alignment */
+    overflow: visible;
+    /* Allow text to flow normally */
+    white-space: normal;
+    /* Allow the description text to wrap */
+}
+
+/* Show more button */
+.mywork_showmore {
+    display: flex;
+    align-items: center;
+    /* Center content vertically */
+    justify-content: center;
+    /* Center content horizontally */
+    gap: 10px;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 15px 15px;
+    font-size: 18px;
+    transition: 0.5s;
+    cursor: pointer;
+    text-decoration: none;
+    /* Remove underline for link */
+    color: white;
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 942px) {
+    .mywork-container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        width: 100%;
+    }
+
+    .mywork-title h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .mywork-container img {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .mywork_showmore {
+        font-size: 14px;
+        padding: 10px 10px;
+    }
+}
+
+/* Mobile view (max-width: 450px) */
+@media (max-width: 450px) {
+    .mywork-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .mywork-title h1 {
+        font-size: 30px;
+        padding: 0 10px;
+    }
+
+    .mywork-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .mywork_showmore {
+        font-size: 12px;
+        padding: 8px 8px;
+    }
+
+    .mywork-description-text {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 10px 20px !important;
+        max-width: 100%;
+        /* Limit text width for better alignment */
+        overflow: visible;
+        /* Allow text to flow normally */
+        white-space: normal;
+        /* Allow the description text to wrap */
+    }
+
+}

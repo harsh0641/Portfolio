@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+<!-- Replace /vite.svg with your new favicon image -->
+<link rel="icon" type="image/png" href="/src/assets/logo12.png" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+
+  <title>Harsh Vora</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <style>
+    img {
+      user-select: none; /* Prevent text selection on images */
+      -webkit-user-drag: none; /* Prevent dragging in WebKit browsers */
+    }
+    
+  </style>
+  
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script>
+    document.addEventListener('contextmenu', (e) => e.preventDefault()); // Disable right-click
+    document.addEventListener('selectstart', (e) => e.preventDefault()); // Disable text selection
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+        e.preventDefault(); // Disable Ctrl+C or Cmd+C
+        alert('Copying is disabled on this website.');
+      }
+    });
+
+  </script>
+</body>
+
+</html>
